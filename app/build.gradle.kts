@@ -37,7 +37,6 @@ android {
 
 
 dependencies {
-    implementation(files("libs/sherpa-onnx-2.0.1.aar"))
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
@@ -46,7 +45,19 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.firebase.encoders)
     testImplementation(libs.junit)
+
+    //Speech recognition
+    implementation(libs.sherpa.onnx)
+    //Dotenv
+    implementation(libs.dotenv.vault.kotlin)
+
+    //FileCodecs
+    implementation("ws.schild:jave-core:3.3.1")
+    implementation("ws.schild:jave-nativebin-win64:3.3.1")
+    implementation("ws.schild:jave-nativebin-linux64:3.3.1")
+    implementation("ws.schild:jave-nativebin-osx64:3.3.1")
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
